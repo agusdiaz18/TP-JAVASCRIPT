@@ -1,0 +1,379 @@
+:root{
+    --bgcolor:#353A40;
+    --textcolor:white;
+    --texttickets: #29A744;
+}
+
+*{
+
+    margin:0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+
+    background-color: var(--bgcolor);
+    height: 4.2em; /* es relativo*/
+    color: var(--textcolor);
+    position: fixed;
+    top:0;
+    z-index: 100;
+
+    display: flex;
+    
+    width: 100%; /*ocupa todo el ancho posible*/
+    .logo{
+        display: inline-block;
+        margin-left: 2em;
+
+        & img{
+            
+            height: 4em; /* height:altura*/
+            vertical-align: middle;
+        }
+        & h2{
+            display: inline-block; /*para que se posicione a la par de la img*/
+            
+        }
+    }
+    & nav{
+        float: right;
+        padding: 1.5em 2em;
+
+        & a{
+        text-decoration: none;
+        color: var(--textcolor);
+        margin: 0.5em;
+        }
+        .ticket{
+            color: var(--texttickets);
+        }
+    }
+}
+.fondo{
+    position: relative; /*el contenido se va a posicionar respecto a la img y no de la pagina */
+    overflow: hidden;
+    & img{
+        filter: brightness(0.4);
+        top: 10%;
+        align-content: space-around;
+        /*height: 100%;*/
+        width: 100%;
+    }
+    .imgtex{
+        position: absolute; /*para que se mueve con respecto al principal*/
+        text-align: right;
+        top:50vh; /*posiciona el texto*/
+        right: 4em;
+        width: 40%; /*que ocupe solo este ancho*/
+        line-height: 1.5em;
+        
+        & h2{
+            color: var(--textcolor);
+        }
+        & p{
+            color: var(--textcolor);
+        }
+        & a {
+            color: var(--textcolor);
+            padding: 10px;
+            display: inline-block;
+            border: 1px solid gray;
+            
+            
+        }
+        & a:link {
+            padding: 10px;
+            margin: 10px red;
+            color: var(--textcolor);
+            text-decoration: none;
+        }
+        
+    }
+
+}
+
+.oradores{
+    display: flex;/*Utilizamos flexbox para alinear las clases hijas en una fila */
+    /*margin: 60px;  */
+    flex-direction: column;
+    align-items: center; /* Para centrar horizontalmente */
+    text-align: center;
+    }
+    .titulo{
+        margin-bottom: 20px; 
+    }
+    .claseshijas{
+        display: flex; 
+        flex-wrap: wrap; /*permite que las clases hijas se adapten a pantallas mas peques*/
+        justify-content: center; /*Centra horizontalmente las clases hijas */
+        
+        .steve, .bill,  .ada {
+            /*display: inline-block;*/ /* Coloca las clases hijas una al lado de la otra */
+            margin-right: 20px; /* Agrega un margen entre las clases hijas para separarlas */
+            width: calc(33.33% - 20px);/* Ajusta el ancho de las clases hijas para que haya espacio entre ellas */
+            
+            & img{
+                width: 400px;
+                height: auto;
+        }
+        }
+            & h4{
+                display: inline-block;
+                margin:2px;
+        }
+            .peqtitulos2,.peqtitulos1, .peqtitulos3{
+                .ama{
+                    background-color: #FDC006;
+                    padding: 3px 8px;
+                    border-radius: 6px;
+                    
+            }
+                .rea{
+                    background-color: #1EA6BD;
+                    padding: 3px 8px;
+                    border-radius: 6px;
+                    border: 1px;
+            }
+                .nego{
+                    background-color: #6B7482;
+                    color: var(--textcolor);
+                    padding: 1px 4px;
+                    border-radius: 6px;
+                    border: 1px;
+            }
+                .star{
+                    background-color: #D83446;
+                    color: var(--textcolor);
+                    padding: 1px 4px;
+                    border-radius: 6px;
+                    border: 1px;
+            }
+        }
+    }
+.playa{
+    display:flex;
+    background-color: var(--textcolor);
+    flex-wrap: wrap;/* Permite que las dos columnas se ajusten en pantallas más pequeñas */
+
+    .foto, .texto{
+        display: inline-block;
+        padding: 1px;
+        flex: 1; /* Ambas columnas ocupan el mismo espacio */
+        
+    }
+    .foto{
+        & img {
+            height: auto;
+            width: 600px;
+            
+        } 
+    }
+    .texto{
+        padding: 15px;
+        background-color: var(--bgcolor);
+        color: var(--textcolor);
+        & h2, & p {
+            color: var(--textcolor);
+            padding: 5px;
+        }
+        & button{
+            padding:30px;
+            background-color: var(--bgcolor);
+            border: none;
+            color: var(--textcolor);
+            padding: 5px 10px;  /*agrega relleno para el boton*/
+            border: 1px solid #ffffff; /* Agrega una línea blanca alrededor del botón */
+            
+        }
+    }
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    .texto{
+        text-align: center;
+        /*justify-content: center;
+        align-items: center;*/
+       
+        .titulo{
+            margin: 10px 35px;
+            /*display: flex;
+            flex-direction: column;
+            align-items: center; /* Centra horizontalmente */
+            /*justify-content: center;*/ /* Centra verticalmente */
+            /*margin: 10px 35px;*/
+}
+
+        }
+        & form{
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            .nombreyap{
+                display: flex;
+    
+            }
+            & textarea{
+                width: 100%;
+            }
+            & submit{
+                width: 100%;
+            }
+        }
+        .nombreyap div{
+            flex: 1; /* Hace que los campos de "Nombre" y "Apellido" ocupen el mismo ancho */
+            margin-right: 10px; /* Espacio entre "Nombre" y "Apellido" */
+        }
+        .boton-enviar {
+            background-color: #94CB3B;
+            width: 100%;
+            border: none;
+        }
+    }
+    & footer{
+        background-color:#1E4F6D;
+         /* Agrega espacio interno al footer para separar el contenido del borde */
+        & nav {
+            display: inline-block; /* Hace que los elementos de navegación se muestren uno al lado del otro */
+            margin-right: 10px; /* Agrega un margen derecho de 10px entre los elementos de navegación */
+            padding: 5px 10px; /* Agrega relleno para separar el texto del borde */
+             /* Cambia el color de fondo de los elementos de navegación según tus preferencias */
+            color: #fff; /* Cambia el color del texto según tus preferencias */
+            text-decoration: none; /* Elimina el subrayado predeterminado de los enlaces */
+            margin-left:50px;
+        }
+    }
+    @media (max-width: 575px) {
+        .playa {
+            flex-direction: column; /* Coloca los elementos en una columna en pantallas pequeñas */
+        }
+
+        .oradores{
+            display: flex;
+            flex-direction: column;
+                .claseshijas{
+                    display: flex;
+                    align-items: center;
+                    & img{
+                        width: 160px;
+                        height: auto;
+                }
+        }
+        }
+        header{
+            position: relative;
+            height: 100%;
+            
+            .padre{
+                right: 42%;
+                height: 40%;
+                display: flex;
+                flex-direction: column;
+
+                
+                .logo{
+                    display: block;
+                    flex-direction: column;
+                }
+                .nav2{
+                    display: block; /*block*/ /*flex*/ /*inline-table*/
+                    & a{
+                    padding: 10 px 20px;
+                    border: 10px black;
+                    display: inline-block;
+                    background-color: #6B7482;
+                    border-radius: 5px;
+                    margin-right: 10px; 
+                }
+                }
+    }
+        }
+        .fondo{
+
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 100%
+            align-content: space-around;
+
+            
+}
+    .imgtex{
+            /position: absolute; /*para que se mueva con respecto al principal*/
+                color: var(--textcolor);
+                text-align: left;
+                right: 10%;
+                width: 40%;
+                height: 55%;
+                line-height: 1.5em;
+                
+                
+    }
+        footer { 
+            display: block;
+            & nav{
+                padding: 10 px 20px;
+                    border: 10px black;
+                    display: inline-block;
+                    background-color: #c0d0e8;
+                    border-radius: 5px;
+                    margin-right: 10px;
+                    color: black;
+            }
+        }
+
+
+        .fondo{
+            position: relative; /*el contenido se va a posicionar respecto a la img y no de la pagina */
+            overflow: hidden;
+            & img{
+                filter: brightness(0.4);
+                top: 10%;
+                align-content: space-around;
+                /*height: 100%;*/
+                width: 100%;
+            }
+            .imgtex{
+                position: absolute; /*para que se mueve con respecto al principal*/
+                text-align: center;
+                top:45% ; /*posiciona el texto*/
+                right: 0;
+                width: 100%; /*que ocupe solo este ancho*/
+                height: auto;
+                line-height: 1.5em;
+                transform: translateY(-50%);
+                
+                
+                & h2{
+                    color: rgb(106, 106, 108);
+                }
+                & p{
+                    color:  rgb(138, 138, 140);
+                }
+                & a {
+                    color: var(--textcolor);
+                    padding: 10px;
+                    display: inline-block;
+                    border: 1px solid gray;
+                    
+                    
+                }
+                & a:link {
+                    padding: 10px;
+                    margin: 10px red;
+                    color: var(--textcolor);
+                    text-decoration: none;
+                }
+                
+            }
+        
+        }
+        
+
+
+    }
